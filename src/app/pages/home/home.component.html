@@ -1,1 +1,4 @@
-<p>home works!</p>
+<!-- <p *ngFor="let anime of animes.results">{{anime.title}}</p> -->
+
+<app-anime-window *ngFor= "let anime of animes.results" [anime] = anime ></app-anime-window>
+
