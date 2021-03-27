@@ -1,0 +1,40 @@
+.window-container{
+  position: relative;
+  height: 250px;
+  width: 180px;
+  transition: 0.2s all;
+  border: 2px solid #07154e;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.window-container:hover{
+  box-shadow: 3px 3px rgba(183, 216, 241, 0.7);
+}
+
+.window-container:hover .synopsis{
+  opacity: 1;
+}
+
+.window-container img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.window-name{
+  position: absolute;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  background-image: linear-gradient(0, rgba(0, 0, 0, 0.8) 45% , rgba(0, 0, 0, 0.5),  transparent);
+  color: white;
+  width: 100%;
+  text-align: left;
+  padding: 3px 0;
+  bottom: 0;
+}
+
+.window-name .name{
+  margin-left: 5px;
+  width: calc(100% - 5px - 5px);
+}

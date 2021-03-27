@@ -1,4 +1,9 @@
-<div>
-    <img [src]="anime.image_url" height="250px" width="175px"/>
-    <div>{{anime.title}}</div>
-</div>
+<a href= "/anime/{{anime.mal_id}}" target="_blank">
+    <div class="window-container">
+        <img [src]="anime.image_url" />
+        <div class="window-name">
+            <div class="name">{{anime.title}}</div>
+        </div>
+    </div>
+
+</a>

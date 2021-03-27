@@ -1,1 +1,135 @@
-<p>detail works!</p>
+<div style="height: 90px;width: 100%;background-color: #050511;border-bottom: 2px solid #b8d9f1;"></div>
+<div style="padding: 0 15vw;">
+  <div>
+    <div class="flex margin-10px-vertical">
+      <div class="margin-10px-horizontal" style="max-width: 300px;">
+        <img [src]="anime.image_url" width="300px" height="400px" style="margin-top:15px;border: 2px solid #b8d9f1;" />
+        <div class="margin-5px-vertical">
+          <div class="margin-5px-vertical sub-title"><b>Alternate Title</b>
+            <fa-icon [icon]="signatureIcon" class="margin-5px"></fa-icon>
+          </div>
+          <div class="h-line"></div>
+          <div>English: {{anime.title_english}}</div>
+          <div>Japanese: {{anime.title_japanese}}</div>
+          <div *ngIf="anime.title_synonyms.length > 0">
+            Synonims: <div *ngFor="let title of anime.title_synonyms">{{title}}</div>
+          </div>
+        </div>
+        <div class="margin-5px-vertical">
+          <div class="margin-5px-vertical sub-title"><b>Info</b>
+            <fa-icon [icon]="infoIcon" class="margin-5px"></fa-icon>
+          </div>
+          <div class="h-line"></div>
+          <div *ngIf="anime.type">
+            Type: {{anime.type}}
+          </div>
+          <div *ngIf="anime.episodes">
+            Episodes: {{anime.episodes}}
+          </div>
+          <div *ngIf="anime.aired">
+            Aired: {{anime.aired.string}}
+          </div>
+          <div *ngIf="anime.status">
+            Status: {{anime.status}}
+          </div>
+          <div *ngIf="anime.source">
+            Source: {{anime.source}}
+          </div>
+          <div *ngIf="anime.broadcast">
+            Broadcast: {{anime.broadcast}}
+          </div>
+          <div *ngIf="anime.duration">
+            Duration: {{anime.duration}}
+          </div>
+          <div *ngIf="anime.premiered">
+            Premiered: {{anime.premiered}}
+          </div>
+          <div *ngIf="anime.rating">
+            Rating: {{anime.rating}}
+          </div>
+          <div class="margin-5px-vertical sub-title">
+            <b>Statistics</b>
+            <fa-icon [icon]="chartIcon" class="margin-5px"></fa-icon>
+          </div>
+          <div class="h-line"></div>
+          <div *ngIf="anime.score">
+            score: {{anime.score}} (scored by {{anime.scored_by}} users)
+          </div>
+          <div *ngIf="anime.rank">
+            ranked: #{{anime.rank}}
+          </div>
+          <div *ngIf="anime.popularity">
+            popularity: #{{anime.popularity}}
+          </div>
+        </div>
+      </div>
+
+      <div class="margin-10px-horizontal" style="max-width: 1000px;">
+        <b class="font-size-2em">{{anime.title}}</b>
+        <div class="flex flex-wrap" style="margin-top:10px;" *ngIf="anime.genres.length > 0">
+          <a href="/search?genre={{genre.mal_id}}&order_by=score&sort=desc" class="tag"
+            *ngFor="let genre of anime.genres">{{genre.name}}</a>
+        </div>
+        <div class="flex-align-center">
+          <star-rating [value]="anime.score/2" [totalstars]="5" checkedcolor="gold" uncheckedcolor="#b8d9f1" size="30px"
+            [readonly]="true"></star-rating>
+          <b style="margin-top:5px">{{anime.score ? anime.score : 0}} / 10</b>
+        </div>
+        <div class="h-line"></div>
+        <p style="font-size: 1.5em;margin: 0;text-align: justify;">{{anime.synopsis}}</p>
+
+        <div class="margin-5px-vertical sub-title">
+          <b>Trailer</b>
+          <fa-icon [icon]="youtubeIcon" class="margin-5px"></fa-icon>
+        </div>
+        <div class="h-line"></div>
+        <div *ngIf="anime.trailer_url;then content else other_content">here is ignored</div>
+        <ng-template #content><iframe width="1000" height="570" [src]="anime.trailer_url | safe" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe></ng-template>
+        <ng-template #other_content>No Trailer available :(</ng-template>
+
+
+        <div class="margin-5px-vertical sub-title">
+          <b>Sound</b>
+          <fa-icon [icon]="soundIcon" class="margin-5px"></fa-icon>
+        </div>
+        <div class="h-line"></div>
+
+        <div class="flex-justify-around" id="opening-ending-box"
+          style="height: 500px;overflow-y: auto;position: relative;">
+          <div style="max-height: 500px; width: 40%;">
+            <div>Opening:</div>
+            <div *ngFor="let opening of openingThemes">
+              <a target="_blank"
+                href='https://www.youtube.com/results?search_query={{opening.link}}'>{{opening.title}}</a>
+            </div>
+          </div>
+          <div class="v-line" style="height: 450px;position: sticky;top: 8%;"></div>
+          <div style="max-height: 500px;width: 40%;">
+            <div>Ending:</div>
+            <div *ngFor="let ending of endingThemes">
+              <a target="_blank"
+                href='https://www.youtube.com/results?search_query={{ending.link}}'>{{ending.title}}</a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="margin-5px-vertical sub-title">
+          <b>Images</b>
+          <fa-icon [icon]="imagesIcon" class="margin-5px"></fa-icon>
+        </div>
+        <div class="h-line"></div>
+        <carousel [height]=350 [width]=1000 [cellsToShow]=3 [loop]=true [autoplay]=true [autoplayInterval]=3000
+          [lightDOM]=true>
+          <div *ngFor="let picture of animeImages" class="carousel-cell">
+            <img lazy [src]="picture" />
+          </div>
+        </carousel>
+
+      </div>
+    </div>
+
+  </div>
+</div>

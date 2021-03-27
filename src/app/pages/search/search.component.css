@@ -1,0 +1,76 @@
+.filter-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  color: #b8d9f1;
+}
+
+.filter-container span{
+  color: #b8d9f1;
+}
+
+.filter-container div{
+  margin: 0 10px;
+}
+
+.filter-container input, select{
+  background-color: transparent;
+  border: 1px solid #b8d9f1;
+  min-width: 100px;
+  margin: 5px;
+  font-size: 1.2em;
+  color: #b8d9f1;
+}
+
+.filter-container option{
+  background-color: black;
+}
+
+.filter-container input{
+  padding: 0 0 2px 5px;
+  flex-grow: 1;
+}
+
+.search-icon{
+  padding: 0 10px;
+  background-color: #b8d9f1;
+  color: black;
+  cursor: pointer;
+  transition: 0.5s all;
+  font-size: 1.5em;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 1px 1px #b8d9f1;
+}
+
+.search-icon:hover{
+  background-color: #58b7fa;
+  box-shadow: 0 0 1px 1px #58b7fa;
+}
+
+.search-icon:active{
+  box-shadow: none;
+}
+
+.page-button{
+  color: #b8d9f1;
+  border: 1px solid #b8d9f1;
+  padding: 2px 5px;
+  min-width: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+
+.page-button:hover{
+  color: black;
+  background-color: #b8d9f1;
+}
+
+.page-button.activated{
+  color: black;
+  background-color: #b8d9f1;
+  cursor: context-menu;
+}

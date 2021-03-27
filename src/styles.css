@@ -1,1 +1,129 @@
 /* You can add global styles to this file, and also import other style files */
+
+html{
+  padding: 0;
+  margin: 0;
+  background-color: #050511;
+}
+
+@font-face {
+  font-family: FuturaNow;
+  src: url("./assets/FuturaNowHeadline.ttf");
+}
+
+*{
+  font-family: FuturaNow;
+}
+
+a{
+  text-decoration: none;
+}
+
+.display-none{
+  display: none;
+}
+
+.opacity-0{
+  opacity: 0;
+}
+
+.opacity-1{
+  opacity: 1;
+}
+
+.sub-title{
+  font-size: 1.5em;
+  color: #b8d9f1;
+  font-weight: bolder;
+}
+
+.font-size-1em{
+  font-size: 1em
+}
+
+.font-size-2em{
+  font-size: 2em;
+}
+
+.font-size-3em{
+  font-size: 3em;
+}
+
+.flex{
+  display: flex;
+
+}
+
+.flex-justify-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-justify-around{
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-align-center{
+  display: flex;
+  align-items: center;
+}
+
+.flex-align-flex-end{
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.h-line{
+  width: 100%;
+  border: 1px solid #b8d9f1;
+  margin: 5px 0;
+}
+
+.v-line{
+  border: 1px solid #b8d9f1;
+  margin: 0 30px;
+  width: 0;
+}
+
+.margin-5px{
+  margin: 5px;
+}
+
+.margin-10px{
+  margin: 10px;
+}
+
+.margin-5px-horizontal{
+  margin: 0 5px;
+}
+
+
+.margin-10px-horizontal{
+  margin: 0 10px;
+}
+
+
+.margin-5px-vertical{
+  margin: 5px 0;
+}
+
+
+.margin-10px-vertical{
+  margin: 10px 0;
+}
+
+.scroll-y-200px{
+  max-height: 200px;
+}

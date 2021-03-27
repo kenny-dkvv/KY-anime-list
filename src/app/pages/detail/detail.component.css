@@ -1,0 +1,40 @@
+*{
+  color: #b8d9f1;
+}
+
+.tag{
+  padding: 1px 15px 5px 15px;
+  border: 3px solid #b8d9f1;
+  background-color: #050511;
+  color: #b8d9f1;
+  border-radius: 10px;
+  margin: 5px;
+  font-weight: bolder;
+  transition: 0.5s all;
+  cursor: pointer;
+}
+
+.tag:hover{
+  background-color: #b8d9f1;
+  color: #050511;
+}
+
+#opening-ending-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+#opening-ending-box::-webkit-scrollbar-track {
+  background: rgb(65, 65, 65);
+}
+
+/* Handle */
+#opening-ending-box::-webkit-scrollbar-thumb {
+  background: #b8d9f1;
+  transition: 0.5s all;
+}
+
+/* Handle on hover */
+#opening-ending-box::-webkit-scrollbar-thumb:hover {
+  background: #92cef8;
+}

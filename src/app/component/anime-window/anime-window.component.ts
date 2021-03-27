@@ -15,7 +15,7 @@ export class AnimeWindowComponent implements OnInit {
   
   
   ngOnInit(): void {
-    console.log(this.anime)
+    
   }
 
 }

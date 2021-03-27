@@ -1,0 +1,108 @@
+.page{
+  background-color: #050511;
+  padding-bottom: 20px;
+  /* background-color: #ffffff; */
+}
+
+.carousel-container{
+  overflow: visible !important;
+  background-color: red !important;
+}
+
+.carousel-cell{
+  overflow: visible !important;
+  z-index: -1;
+}
+
+
+.jumbotron{
+  height: 800px;
+  position: relative;
+  background-size: cover;
+  width: 100%;
+}
+
+.jumbotron .background{
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../../../assets/jumbotron.png');
+  background-position: center;
+  /* background-attachment: fixed; */
+}
+
+.jumbotron .overlay{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: linear-gradient(40deg, #050511 25%,  rgb(184, 217, 241, 0.1));
+}
+
+.jumbotron .text-content{
+  position: absolute;
+  color: #b8d9f1;
+  top: 200px;
+  left: 50px;
+  max-width: 30vw;
+}
+
+
+.title{
+  font-size: 2em;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.synopsis{
+  font-size: 1.5em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+}
+
+button{
+  padding: 2px 5px;
+  color: #b8d9f1;
+  border: 1px solid #b8d9f1;
+  background: transparent;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.text-content button{
+  margin-top: 10px;
+  height: 50px;
+  width: 150px;
+  font-size: 1.2em;
+  transition: 0.5s all;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  outline: none;
+}
+
+.text-content button:hover{
+  background-color: #b8d9f1;
+  color: black;
+}
+
+
+.heading{
+  color: #b8d9f1;
+  font-size: 2em;
+  font-weight: bolder;
+  margin: 15px 0px 5px 0px;
+}
+
+.heading a{
+  color: #b8d9f1;
+  font-size: 0.5em;
+  transition: 0.5s all;
+}
+
+
+.heading a:hover{
+  color: #58b7fa;
+}

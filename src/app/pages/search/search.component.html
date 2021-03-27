@@ -1,0 +1,121 @@
+<div style="height: 90px;width: 100%;background-color: #050511;border-bottom: 2px solid #b8d9f1;"></div>
+<div style="padding: 0 15vw;">
+  <div style="margin: 25px 0">
+    <div class="margin-5px-vertical sub-title">
+      <b>Filter</b>
+      <fa-icon [icon]="filterIcon" class="margin-5px"></fa-icon>
+    </div>
+    <div class="h-line"></div>
+    <div class="filter-container">
+      <div>
+        <span>Type:</span>
+        <select (ngModelChange)="handleType($event)" [ngModel]="paramContent.type">
+          <option value="undefined">All</option>
+          <option value="tv">Tv</option>
+          <option value="ova">Ova</option>
+          <option value="movie">Movie</option>
+          <option value="special">Special</option>
+          <option value="ona">Ona</option>
+          <option value="music">Music</option>
+        </select>
+      </div>
+      <div>
+        <span>Status:</span>
+        <select (ngModelChange)="handleStatus($event)" [ngModel]="paramContent.status">
+          <option value="undefined">All</option>
+          <option value="airing">Airing</option>
+          <option value="completed">Completed</option>
+          <option value="upcoming">Upcoming</option>
+        </select>
+      </div>
+      <div>
+        <span>Order by:</span>
+        <select (ngModelChange)="handleOrder($event)" [ngModel]="paramContent.order_by">
+          <option value="title">Title</option>
+          <option value="score">Score</option>
+          <option value="type">Type</option>
+          <option value="members">Members</option>
+          <option value="rating">Rating</option>
+        </select>
+      </div>
+      <div>
+        <span>Sort:</span>
+        <select (ngModelChange)="handleSort($event)" [ngModel]="paramContent.sort ? paramContent.sort : 'asc'">
+          <option value="desc">Descending</option>
+          <option value="asc">Ascending</option>
+        </select>
+      </div>
+      <div>
+        <span>Genre:</span>
+        <select (ngModelChange)="handleGenre($event)" [ngModel]="paramContent.genre">
+          <option value="undefined">All</option>
+          <option value="1">Action</option>
+          <option value="2">Adventure</option>
+          <option value="3">Cars</option>
+          <option value="4">Comedy</option>
+          <option value="5">Dementia</option>
+          <option value="6">Demons</option>
+          <option value="7">Mystery</option>
+          <option value="8">Drama</option>
+          <option value="9">Ecchi</option>
+          <option value="10">Fantasy</option>
+          <option value="11">Game</option>
+          <option value="12">Hentai</option>
+          <option value="13">Historical</option>
+          <option value="14">Horror</option>
+          <option value="15">Kids</option>
+          <option value="16">Magic</option>
+          <option value="17">MartialArts</option>
+          <option value="18">Mecha</option>
+          <option value="19">Music</option>
+          <option value="20">Parody</option>
+          <option value="21">Samurai</option>
+          <option value="22">Romance</option>
+          <option value="23">School</option>
+          <option value="24">SciFi</option>
+          <option value="25">Shoujo</option>
+          <option value="26">ShoujoAi</option>
+          <option value="27">Shounen</option>
+          <option value="28">ShounenAi</option>
+          <option value="29">Space</option>
+          <option value="30">Sports</option>
+          <option value="31">SuperPower</option>
+          <option value="32">Vampire</option>
+          <option value="33">Yaoi</option>
+          <option value="34">Yuri</option>
+          <option value="35">Harem</option>
+          <option value="36">SliceOfLife</option>
+          <option value="37">Supernatural</option>
+          <option value="38">Military</option>
+          <option value="39">Police</option>
+          <option value="40">Psychological</option>
+          <option value="41">Thriller</option>
+          <option value="42">Seinen</option>
+          <option value="43">Josei</option>
+        </select>
+      </div>
+      <input [ngModel]="paramContent.q ? paramContent.q : ''" (ngModelChange)="handleTitle($event)"
+        placeholder="title" />
+
+      <fa-icon [icon]="searchIcon" class="search-icon margin-5px" (click)="searchWithFilter()"></fa-icon>
+    </div>
+  </div>
+
+  <div class="margin-5px-vertical sub-title">
+    <b>Search Result</b>
+    <fa-icon [icon]="resultIcon" class="margin-5px"></fa-icon>
+  </div>
+  <div class="h-line"></div>
+  <div *ngIf="searchResult" class="flex-wrap">
+    <app-anime-window *ngFor="let anime of searchResult.results" style="margin: 15px 3%;" [anime]=anime>
+    </app-anime-window>
+  </div>
+  <div class="flex" style="padding: 5px 3% 15px 3%;">
+    <ng-container *ngFor="let page of pages">
+      <div class="page-button" style="margin: 0 5px" *ngIf="page !== pageValue" (click)="handlePage(page)">{{page}}
+      </div>
+      <div class="page-button activated" style="margin: 0 5px" *ngIf="page === pageValue">{{page}}</div>
+    </ng-container>
+
+  </div>
+</div>

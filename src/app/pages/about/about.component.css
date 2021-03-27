@@ -1,0 +1,16 @@
+.transparent-page{
+  position: relative;
+  height: 100vh; 
+  color: #b8d9f1;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.info-link{
+  color: #b8d9f1;
+  transition: 0.5s all;
+}
+
+
+.info-link:hover{
+  color: #239ef6;
+}

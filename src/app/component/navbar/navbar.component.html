@@ -1,0 +1,40 @@
+<div class="container flex-justify-between">
+  <div class="flex-align-center">
+    <a href="/" style="margin: 10px 30px 0 30px;"><img src="../../../assets/logo.png" height="50px" /></a>
+    <a href="/about" style="font-size: 1.5em;">About</a>
+    <a style="font-size: 1.5em; height: 100%;" 
+    class="flex-center" 
+    [ngClass]="{'activeHovered' : isCategoryHovered}"
+    (mouseover)="setCategoryHovered(true)"
+    (mouseout)="setCategoryHovered(false)">
+      Category
+    </a>
+
+  </div>
+
+
+  <div class="searchbar-container flex-center"  style="position: relative;">
+    <input (keydown.enter)="searchbarClick(queryId)" class="searchbar" placeholder="Find your anime..."
+      [(ngModel)]="queryId" />
+    <fa-icon [icon]="searchIcon" class="search-icon margin-5px" (click)="searchbarClick(queryId)"></fa-icon>
+  </div>
+
+  <div [ngClass]="{'opacity-0' : !isCategoryHovered}"
+  style="position: absolute;top: 85px;width: 100%; background-color: rgb(10, 11, 15, 0.8);"
+  (mouseover)="setCategoryHovered(true)"
+  (mouseout)="setCategoryHovered(false)"
+  >
+    <div class="flex-justify-around category-container">
+      <a href="search?genre=1&order_by=score&sort=desc" style="font-size: 1.2em;">Action</a>
+      <a href="search?genre=2&order_by=score&sort=desc" style="font-size: 1.2em;">Adventure</a>
+      <a href="search?genre=4&order_by=score&sort=desc" style="font-size: 1.2em;">Comedy</a>
+      <a href="search?genre=22&order_by=score&sort=desc" style="font-size: 1.2em;">Romance</a>
+      <a href="search?genre=7&order_by=score&sort=desc" style="font-size: 1.2em;">Mystery</a>
+      <a href="search?genre=10&order_by=score&sort=desc" style="font-size: 1.2em;">Fantasy</a>
+      <a href="search?genre=38&order_by=score&sort=desc" style="font-size: 1.2em;">Military</a>
+      <a href="search?genre=14&order_by=score&sort=desc" style="font-size: 1.2em;">Horror</a>
+    </div>
+
+  </div>
+
+</div>

@@ -1,4 +1,73 @@
-<!-- <p *ngFor="let anime of animes.results">{{anime.title}}</p> -->
+<div class="jumbotron">
+  <div class="overlay"></div>
+  <div class="background"></div>
+  <div *ngIf = "fateAnime" class="text-content">
+    <div class="title">{{fateAnime.title}}</div>
+    <div class="synopsis">{{fateAnime.synopsis}}</div>
+    <a href="anime/{{fateAnime.mal_id}}">
+      <button class="flex-center">
+        <fa-icon [icon]="infoIcon" class="margin-5px"></fa-icon>
+        <p>More Info</p>
+      </button>
+    </a>
+  </div>
+</div>
+<div style="padding: 0 5%">
+  <div class="heading flex-justify-between flex-align-flex-end">
+    <span>Today Releases</span> 
+  </div>
+  <carousel *ngIf="todayReleaseAnimes" [height]="280" [margin]="27" [freeScroll]=true>
+    <div *ngFor="let anime of todayReleaseAnimes" class="carousel-cell">
+      <app-anime-window [anime]=anime></app-anime-window>
+    </div>
+  </carousel>
 
-<app-anime-window *ngFor= "let anime of animes.results" [anime] = anime ></app-anime-window>
+  <div class="heading flex-justify-between flex-align-flex-end">
+    <span>Airing</span> 
+    <a href="search?status=airing&order_by=score&sort=desc">view more</a>
+  </div>
+  <carousel *ngIf="nowAiringAnimes" [height]="280" [margin]="27" [freeScroll]=true>
+    <div *ngFor="let anime of nowAiringAnimes.results" class="carousel-cell">
+      <app-anime-window [anime]=anime></app-anime-window>
+    </div>
+  </carousel>
 
+  <div class="heading flex-justify-between flex-align-flex-end">
+    <span>Announced</span> 
+  </div>
+  <carousel *ngIf="announcedAnimes" [height]="280" [margin]="27" [freeScroll]=true>
+    <div *ngFor="let anime of announcedAnimes" class="carousel-cell">
+      <app-anime-window [anime]=anime></app-anime-window>
+    </div>
+  </carousel>
+
+  <div class="heading flex-justify-between flex-align-flex-end">
+    <span>Completed</span> 
+    <a href="search?status=completed&order_by=score&sort=desc">view more</a>
+  </div>
+  <carousel *ngIf="completedAnimes" [height]="280" [margin]="27" [freeScroll]=true>
+    <div *ngFor="let anime of completedAnimes.results" class="carousel-cell">
+      <app-anime-window [anime]=anime></app-anime-window>
+    </div>
+  </carousel>
+
+  <div class="heading flex-justify-between flex-align-flex-end">
+    <span>Top</span> 
+    <a href="search?order_by=score&sort=desc">view more</a>
+  </div>
+  <carousel *ngIf="topAnimes" [height]="280" [margin]="27" [freeScroll]=true>
+    <div *ngFor="let anime of topAnimes.results" class="carousel-cell">
+      <app-anime-window [anime]=anime></app-anime-window>
+    </div>
+  </carousel>
+
+  <div class="heading flex-justify-between flex-align-flex-end">
+    <span>Upcoming</span> 
+    <a href="search?status=upcoming&order_by=score&sort=desc">view more</a>
+  </div>
+  <carousel *ngIf="upcomingAnimes" [height]="280" [margin]="27" [freeScroll]=true>
+    <div *ngFor="let anime of upcomingAnimes.results" class="carousel-cell">
+      <app-anime-window [anime]=anime></app-anime-window>
+    </div>
+  </carousel>
+</div>
